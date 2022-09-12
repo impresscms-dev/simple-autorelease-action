@@ -13,9 +13,9 @@ to this code (Note: some parts and arguments needs to be altered):
 name: Automatic releases
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+  schedule:
+    - cron: '0 4 * * 1'
 
 jobs:
   auto-release:
