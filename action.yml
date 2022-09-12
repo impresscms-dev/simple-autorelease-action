@@ -24,7 +24,7 @@ steps:
     id: changelog
     uses: dragonraid/changelog-emitter@v0.3.1
     with:
-      github_token: ${{inputs.github_token}}
+      github_token: ${{ inputs.github_token }}
 
   - name: Debug
     run: echo "${{ steps.changelog.outputs.isEmpty }}"
@@ -35,15 +35,15 @@ steps:
     id: tag
     uses: mathieudutour/github-tag-action@v6.0
     with:
-      github_token: ${{inputs.github_token}}
-      release_branches: ${{inputs.release_branch}}
-      default_bump: ${{inputs.default_bump}}
+      github_token: ${{ inputs.github_token }}
+      release_branches: ${{ inputs.release_branch }}
+      default_bump: ${{ inputs.default_bump }}
 
   - name: Creating release...
     uses: actions/create-release@v1
     if: steps.changelog.outputs.isEmpty == 'false'
     env:
-      GITHUB_TOKEN: ${{inputs.github_token}}
+      GITHUB_TOKEN: ${{ inputs.github_token }}
     with:
       tag_name: ${{ steps.tag.outputs.new_tag }}
       release_name: ${{ steps.tag.outputs.new_tag }}
