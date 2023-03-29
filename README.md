@@ -39,6 +39,15 @@ This action supports such arguments (used in `with` keyword):
 | release_branch  | No       | main           | Branch that will be used for releases                                                              |
 | default_bump                   | No       | patch          | How to bump version? Major.Minor.Patch |
 
+## Outputs
+
+This action outputs such data, that can be used for other actions:
+
+| Variable | Description |
+|----------|-------------|
+| not_released | Returns if new version was released |
+| new_version | New version tag |
+
 ## How to contribute?
 
 If you want to add some functionality or fix bugs, you can fork, change and create pull request. If you not sure how this works, try [interactive GitHub tutorial](https://skills.github.com).
